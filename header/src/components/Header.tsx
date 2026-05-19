@@ -1,10 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-
-interface Product {
-  id: number
-  name: string
-}
+import type { Product } from '../types/product.type'
 
 interface HeaderProps {
   cartItems: Product[]
@@ -34,7 +30,7 @@ export default function Header({ cartItems }: HeaderProps) {
 
             {cartItems.map((item) => (
               <ProductItem key={item.id}>
-                {item.name}
+                {item.title}
               </ProductItem>
             ))}
 

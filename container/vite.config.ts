@@ -24,6 +24,7 @@ export default defineConfig({
         'react',
         'react-dom',
         'styled-components',
+        '@tanstack/react-query',
       ],
     }),
   ],

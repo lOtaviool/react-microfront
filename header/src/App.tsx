@@ -1,16 +1,7 @@
 import Header from './components/Header'
+import type { Product } from './types/product.type'
 
-interface Product {
-  id: number
-  name: string
-}
-
-const mockProducts: Product[] = [
-  {
-    id: 1,
-    name: 'Notebook',
-  },
-]
+const mockProducts: Product[] = []
 
 export default function App() {
   return (

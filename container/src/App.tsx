@@ -1,14 +1,10 @@
 import { lazy, Suspense, useState } from 'react'
 import styled from 'styled-components'
+import type { Product } from './types/product.type'
 
 const Header = lazy(() => import('header/Header'))
 const Footer = lazy(() => import('footer/Footer'))
 const Cards = lazy(() => import('cards/Cards'))
-
-interface Product {
-  id: number
-  name: string
-}
 
 export default function App() {
   const [cartItems, setCartItems] = useState<Product[]>([])
@@ -16,6 +12,8 @@ export default function App() {
   const handleAddToCart = (product: Product) => {
     setCartItems((prev) => [...prev, product])
   }
+
+  console.log(Cards)
 
   return (
     <Container>
