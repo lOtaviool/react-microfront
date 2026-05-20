@@ -1,39 +1,12 @@
-import type { Config } from 'jest'
+import type { Config } from 'jest';
 
 const config: Config = {
-  preset: 'ts-jest/presets/default-esm',
-
+  rootDir: '../', 
   testEnvironment: 'jsdom',
-
-  extensionsToTreatAsEsm: [
-    '.ts',
-    '.tsx',
-  ],
-
-  moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.js$': '$1',
-  },
-
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
   transform: {
-    '^.+\\.(ts|tsx)$': [
-      'ts-jest',
-      {
-        useESM: true,
-        tsconfig: './tsconfig.json',
-      },
-    ],
+    '^.+\\.(t|j)sx?$': 'ts-jest',
   },
+};
 
-  setupFilesAfterEnv: [
-    '<rootDir>/src/setupTests.ts',
-  ],
-
-  testMatch: [
-    '**/*.test.ts',
-    '**/*.test.tsx',
-    '**/*.spec.ts',
-    '**/*.spec.tsx',
-  ],
-}
-
-export default config
+export default config;

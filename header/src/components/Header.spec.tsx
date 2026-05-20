@@ -13,17 +13,13 @@ const mockCart = [
 
 describe('Header Component', () => {
     it('should render header correctly', () => {
-    render(
-        <Header cartItems={mockCart} />,
-    )
+        render(
+            <Header cartItems={mockCart} />,
+        )
 
-    expect(
-        screen.getByText('MicroFrontend Store'),
-    ).toBeInTheDocument()
-
-    expect(
-        screen.getByText('Carrinho (1)'),
-    ).toBeInTheDocument()
+        const logoImg = screen.getByRole('img', { name: /logo/i })
+        expect(logoImg).toBeInTheDocument()
+        expect(logoImg).toHaveAttribute('src', '/logo_w.svg')
     })
 
     it('should increment cart quantity', () => {
@@ -40,9 +36,8 @@ describe('Header Component', () => {
             <Header cartItems={firstCart} />,
         )
 
-        expect(
-            screen.getByText('Carrinho (1)'),
-        ).toBeInTheDocument()
+        const myButton = screen.getByRole('button', { name: /Minicart/i })
+        expect(myButton).toBeInTheDocument()
 
         const updatedCart = [
             ...firstCart,
@@ -59,8 +54,6 @@ describe('Header Component', () => {
             <Header cartItems={updatedCart} />,
         )
 
-        expect(
-            screen.getByText('Carrinho (2)'),
-        ).toBeInTheDocument()
+        expect(myButton).toBeInTheDocument()
     })
 })

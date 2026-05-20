@@ -62,7 +62,7 @@ describe('Cards Component', () => {
         )
 
         const button = await screen.findByText(
-            'Adicionar',
+            'Comprar',
         )
 
         await userEvent.click(button)

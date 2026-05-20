@@ -20,6 +20,7 @@ export default function Header({
 
         <CartButton
           onClick={() => setIsOpen(true)}
+          aria-label="Minicart"
         >
           {cartItems.length > 0 && <Tag>{cartItems.length}</Tag>}
           
