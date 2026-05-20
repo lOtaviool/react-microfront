@@ -8,8 +8,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+    color: #1B2126;
+    background: #fff;
   }
 
   button {

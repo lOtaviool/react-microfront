@@ -34,15 +34,19 @@ export default function Cards({
             {product.description}
           </Description>
 
-          <Price>
-            R$ {product.price}
-          </Price>
+          <CardFooter>
+            <Price>
+              R$ {product.price}
+            </Price>
 
-          <Button
-            onClick={() => onAddToCart(product)}
-          >
-            Adicionar
-          </Button>
+            <Button
+              onClick={() => onAddToCart(product)}
+            >
+              Comprar
+            </Button>
+
+          </CardFooter>
+
         </Card>
       ))}
     </Container>
@@ -51,67 +55,54 @@ export default function Cards({
 
 const Container = styled.div`
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(250px, 1fr));
-
-  gap: 24px;
-
+  grid-template-columns: repeat(auto-fit, minmax(286px, 1fr));
+  gap: 32px 24px;
   padding: 40px;
 `
 
 const Card = styled.div`
   background: white;
-
   border-radius: 12px;
-
+  border: 1px solid #A0AAB4;
   padding: 20px;
-
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const Image = styled.img`
-  width: 100%;
-
-  height: 200px;
-
-  object-fit: cover;
-
+  height: 100px;
   border-radius: 8px;
 `
 
 const Title = styled.h2`
   margin-top: 16px;
-
-  font-size: 20px;
+  font-size: 18px;
 `
 
 const Description = styled.p`
   margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+`
 
-  color: #666;
+const CardFooter = styled.div`
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 `
 
 const Price = styled.p`
-  margin-top: 16px;
-
   font-weight: bold;
-
-  font-size: 22px;
+  font-size: 20px;
 `
 
 const Button = styled.button`
-  width: 100%;
-
-  margin-top: 20px;
-
   border: none;
-
   padding: 12px;
-
-  border-radius: 8px;
-
-  background: #222;
-
-  color: white;
+  border-radius: 999px;
+  background: #27c93f;
+  color: #fff;
 `
