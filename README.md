@@ -86,7 +86,7 @@ git clone https://github.com/seu-usuario/react-microfront.git
 
 ---
 
-# 📦 Instalar dependências
+# Instalar dependências
 
 ## Container
 
@@ -190,7 +190,7 @@ npm run test
 
 ---
 
-# 👨‍💻 Autor
+# Autor
 
 Desenvolvido por Luis Otavio Oliveira
 
