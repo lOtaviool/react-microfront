@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+const logo = 'https://cdn.vectorstock.com/i/500p/97/29/green-circle-shop-logo-vector-16489729.jpg'
 
 export default function Footer() {
   return (
     <Container>
-      <img src="/logo_g.svg" alt="logo" width={50} height={50}/>
-      <span style={{fontSize: '14px'}}>© 2024 VR Benefícios - Todos os direitos reservados</span>
+      <Logo src={logo} alt="logo" />
+      <span style={{fontSize: '14px'}}>© 2026 Green Shop - Todos os direitos reservados</span>
     </Container>
   )
 }
@@ -18,5 +19,12 @@ const Container = styled.footer`
   padding: 0 32px;
   align-items: center;
   gap: 40px;
-  justify-content: start;
+  justify-content: space-between;
 `
+
+const Logo = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+`;
